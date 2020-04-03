@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Array Calc</title>
+
+
+    <script>
+
+
+        function compute() {
+            var list = [17, 8, 9, 5, 20];
+            document.getElementById('outputDiv').innerHTML = addEnds(list);
+        }
+        
+        function addEnds(list) {
+            return list[0] + list[list.length - 1]
+        }
+    
+    </script>
+
+
+</head>
+
+<body>
+
+    <button type="button" onclick="compute()"> Compute fist to last</button>
+    <div id="outputDiv"> </div></br>
+
+</body>
+
+</html>

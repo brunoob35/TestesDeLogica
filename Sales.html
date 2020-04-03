@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Discount</title>
+    <script>
+        /*input: get SubTotal from user and week day from calendar
+        Process: test if 1-SubTotal is greater than $50  2- It is tuesday or wednesday
+        if test is true add 10% discount and then add 6% tax
+        if test is not true, add 6% tax
+        output: Final price with possible discount and tax 
+        */
+
+        function run(){
+            let subTotal = document.getElementById('subTotal').value;
+            let finalPrice;
+            var dayOfWeek = new Date().getDay();
+            /*
+            sunday=0
+            monday=1
+            tuesday=2
+            wednesday=3
+            thursday=4
+            friday=5
+            saturday=6
+            */
+            if ( (subTotal > 50) && ((dayOfWeek == '2') || (dayOfWeek == '3'))){
+                finalPrice = ((subTotal*0.9)*1.06)
+            }
+            else {
+                finalPrice = subTotal*1.06
+
+            }
+            document.getElementById('output').innerHTML = finalPrice;
+        }
+
+    </script>
+</head>
+
+<body>
+
+    How much is the subtotal? <input type="text" id="subTotal"> </input>
+    <br>
+    <button type="button" onclick="run()">Final Price</button>
+    <div id="output"></div>
+
+</body>
+
+</html>

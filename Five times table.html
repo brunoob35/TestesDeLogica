@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Five Times Table</title>
+    <script>
+        /*
+        input:
+        process:
+        output:
+        */
+        function timesTable() {
+         
+            for (let n = 1; n <= 12; n++) {
+                result = (5*n);
+                let display = "5 x " + n + "=" + result + "<br>";
+               
+                document.getElementById('output').innerHTML += display;  
+            }
+        }       
+    </script>
+
+
+</head>
+
+<body>
+
+    <button type="button" onclick="timesTable()"> Nameofthebutton </button>
+
+    <div id="output"> </div>
+
+
+</body>
+
+</html>

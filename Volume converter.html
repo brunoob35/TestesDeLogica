@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Quarts to Litters</title>
+<script>
+    /* Input: Volume in Quarts
+     Processing: convert the Volume from Quarts to Liters
+     Output: The volume in liters
+    */
+    function Convertb() {
+        let text = document.getElementById('quartsinputbox').value;
+        let l = parseFloat(text);
+        let t = l*0.946353;
+        document.getElementById('totaldiv').innerHTML = t;
+    }
+</script>
+</head>
+
+<body>
+    Enter quarts: <input type="text" id="quartsinputbox">
+    <br>
+    <button type="button" onclick="Convertb()"> Convert </button>
+    <br><br>
+<div id="totaldiv"> </div>
+</body>
+</html>

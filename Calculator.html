@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+
+    <script>
+        /*Defining Table
+        Input: First number, Operator, Seccond Number, Result
+        Processing: Rosolve Operator, process equation, compare process to result, choose final answer
+        Output: Final answer after comparisson resoults
+        */
+        function runMath() {
+            let numOne = parseFloat(document.getElementById("numOne").value);
+            let numTwo = parseFloat(document.getElementById("numTwo").value);
+            let operator = document.getElementById("operator").value;
+            let result = parseFloat(document.getElementById("result").value);
+            let programResult
+            if (operator == "+") {
+                programResult = numOne + numTwo;
+            }
+            else if (operator == "-") {
+                programResult = numOne - numTwo;
+            }
+            else if (operator == "/") {
+                programResult = numOne / numTwo;
+            }
+            else if (operator == "*") {
+                programResult = numOne * numTwo;
+            }
+
+
+            if (result == programResult) {
+                document.getElementById("output").innerHTML = ("Correct! Good job!");
+            }
+            else {
+                document.getElementById("output").innerHTML = ("Incorrect! Try again!");
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Test Your Math Skills!</h1>
+    <input type="text" id="numOne"> 
+    <input type="text" id="operator">
+    <input type="text" id="numTwo"> =
+    <input type="text" id="result"> 
+
+    <br>
+    <br>
+    <button type="button" onclick="runMath()">Check</button>
+
+    <div id="output"></div>
+
+
+</body>
+
+</html>

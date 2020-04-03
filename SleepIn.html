@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sleep In?</title>
+    <script>
+        /*
+        input: computer input current date
+        process: 
+        1- check if it's wwekend, add answer to variable weekend.
+        2- check if it's holiday, add value to variable holiday.
+        3- Check if it's weekend or holiday. 
+        output: Display message according to last check
+        
+        */
+        function sleepIn() {
+            var now = new Date();
+            var month = now.getMonth();
+            var dayOfMonth = now.getDate();
+            var dayOfWeek = now.getDay();
+
+            let weekEnd;
+            let holiday;
+
+            if ((dayOfWeek == '0') || (dayOfWeek == '6')) {
+                weekEnd = 'yes'
+            }
+            else {
+                weekEnd = 'no'
+            }
+
+            if (((dayOfMonth == '1') && (month == '0')) || ((dayOfMonth == '4') && (month= '5')) || ((dayOfMonth == '25') && (month='11'))) {
+                holiday = 'yes'
+            }
+            else {
+                holiday = 'no'
+            }
+
+            if ((weekEnd == 'yes') || (holiday == 'yes')) {
+                document.getElementById('output').innerHTML = "Sleep in.";
+            }
+            else {
+                document.getElementById('output').innerHTML = "Get up!";
+            }
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+    <button type="button" onclick="sleepIn()">Can I sleep in?</button>
+    <div id="output"></div>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Loan Calc</title>
+    <script>
+        function doPayment() {
+            let amountBorrowed = parseFloat(document.getElementById('amountBorrowed').value);
+            let annualInterestRate = parseFloat(document.getElementById('annualInterestRate').value);
+            let numberOfYears = parseFloat(document.getElementById('numberOfYears').value);
+            let paymentPerYears = parseFloat(document.getElementById('paymentPerYears').value);
+            let payAmt = computePayment(amountBorrowed, annualInterestRate, numberOfYears, paymentPerYears);
+            document.getElementById('outputDiv1').innerHTML = "$" + payAmt;
+        }
+        function computePayment(principal, annualRate, years, periodsPerYear) {
+            let perRate = annualRate / periodsPerYear;
+            let totPer = years * periodsPerYear;
+            return Math.round(100 * principal * perRate / (1 - (Math.pow((1 + perRate), -totPer)))) / 100;
+        }
+        function doBalance() {
+            let amountBorrowed = parseFloat(document.getElementById('amountBorrowed').value);
+            let annualInterestRate = parseFloat(document.getElementById('annualInterestRate').value);
+            let numberOfYears = parseFloat(document.getElementById('numberOfYears').value);
+            let paymentPerYears = parseFloat(document.getElementById('paymentPerYears').value);
+            let numPay = parseFloat(document.getElementById('numPay').value);
+            let balAmt = computeBalance(amountBorrowed, annualInterestRate, numberOfYears, paymentPerYears, numPay);
+            document.getElementById('outputDiv2').innerHTML = "$" + balAmt;
+        }
+        function computeBalance(principal, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate) {
+            let payAmt = computePayment(principal, annualRate, years, periodsPerYear);
+            let perRate = annualRate / periodsPerYear;
+            let factorX = Math.pow((1 + perRate), numberOfPaymentPaidToDate);
+            return Math.round(100 * (principal * factorX - payAmt * (factorX - 1) / perRate)) / 100;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Loan Calculator</h1>
+    <table>
+        <tr>
+            <td>Amount borrowed (principal)</td>
+            <td><input type="text" id="amountBorrowed"></td>
+        </tr>
+        <tr>
+            <td>Annual interest rate (example: .065)</td>
+            <td><input type="text" id="annualInterestRate"></td>
+        </tr>
+        <tr>
+            <td>Number of years</td>
+            <td><input type="text" id="numberOfYears"></td>
+        </tr>
+        <tr>
+            <td>Payments per year</td>
+            <td><input type="text" id="paymentPerYears"></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="doPayment()">Compute payment</button></td>
+            <td>
+                <div id="outputDiv1"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Number of payments paid to date</td>
+            <td><input type="text" id="numPay"></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="doBalance()">Compute payoff amount</button></td>
+            <td>
+                <div id="outputDiv2"></div>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

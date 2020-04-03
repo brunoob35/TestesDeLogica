@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Middle Value</title>
+    <script>
+
+        function compute() {
+            var list = [12, 4, 8, 15, 17, 5, 20, 11];
+            document.getElementById('output').innerHTML = getMiddle(list);
+        }
+        function getMiddle(list) {
+            if (list.length % 2 == 0) {
+               return (list[Math.floor(list.length / 2) - 1] + list[Math.floor(list.length / 2)]) / 2;
+            }
+            
+            else {
+                return list[Math.floor(list.length / 2)];
+            }
+            
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" onclick="compute()">Get Middle</button>
+    <div id="output"></div></br>
+
+</body>
+
+</html>

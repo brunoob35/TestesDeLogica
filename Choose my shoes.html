@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+<script>
+/*Defining Table
+Input: Weather
+Processing: Choose shoes type
+Output: Shoes
+*/
+
+function shoes(){
+    let weather = document.getElementById('weather').value;
+    let shoes ='shoes';
+        switch (weather){
+        
+        case 'hot':
+            shoes='sandals';
+            document.getElementById("output").innerHTML=shoes;
+            break;
+            
+        case 'rain':
+            shoes='galoshes';
+            document.getElementById("output").innerHTML=shoes;
+            break;
+
+        case 'snow':
+            shoes='boots';
+            document.getElementById("output").innerHTML=shoes;
+            break;
+        default:
+            document.getElementById("output").innerHTML=shoes;
+            
+        }
+
+}
+
+</script>
+
+</head>
+<body>
+
+How's the weather today? <input type="text" id="weather" >
+<button type="button" onclick="shoes()"> Select! </button>
+<p><br></p>
+<div id="output"> </div>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Evens</title>
+    <script>
+
+        function run() {
+            var list = [17, 8, 9, 5, 20, 13];
+            document.getElementById('outputDiv').innerHTML = countEvens(list);
+        }
+
+        function countEvens(list) {
+            var counter = 0
+            var i = 0
+            while (i < list.length) {
+                if ((list[i] % 2) == 0) {
+                    counter++
+                    i++
+                }
+                else {
+                    i++
+                }
+            }
+            return counter
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Test Arrays</h1>
+    <button type="button" onclick="run()">Compute Arrays</button>
+    <div id="outputDiv"></div></br>
+
+</body>
+
+</html>

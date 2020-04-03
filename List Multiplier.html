@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>List Multiplier</title>
+    <script>
+
+        function run() {
+            var list = [17, 8, 9, 5, 20];
+            var multiplier = 3
+            document.getElementById('outputDiv').innerHTML = multiply(list, multiplier);
+        }
+
+        function multiply(list, multiplier) {
+            var counter = 0
+            var i = 0
+            while (i < list.length) {
+                list[i] *= multiplier
+                    i++
+            }
+            return list
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Test Arrays</h1>
+    <button type="button" onclick="run()">Compute Arrays</button>
+    <div id="outputDiv"></div></br>
+
+</body>
+
+</html>

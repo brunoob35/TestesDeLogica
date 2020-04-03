@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Prime numbers</title>
+    <script>
+        function divisor() {
+            let start = parseFloat(document.getElementById("start").value);
+            let end = parseFloat(document.getElementById("end").value);
+            let divisor = parseFloat(document.getElementById("divisor").value);
+
+            for (let i = start; i <= end; i++) {
+                if (i % divisor == 0) {
+                    document.getElementById('output').innerHTML += i + " "
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    Start: <input type="text" id="start" size="5"><br>
+    End: <input type="text" id="end" size="5"><br>
+    Divisor: <input type="text" id="divisor" size="5"><br>
+    <button type="button" onclick="divisor()">Click</button>
+    <div id="output"></div>
+</body>
+
+</html>

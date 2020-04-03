@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Miles to Km</title>
+    <script>
+/* Input: Beginning Odometer reading, Ending odometer reading, Number of gallons used 
+    Processing:
+    1. Subtract beginning odometer reading from ending odometer reading
+    2. Divide total miles by number of gallons used
+    Output: Mileage runned vs Galons used
+*/
+    function Convertb() {
+          let boxbeginning = document.getElementById('beginningOdometer').value;
+          let beginning = parseFloat(boxbeginning);
+        
+          let boxending = document.getElementById('endOfOdometer').value;
+          let ending = parseFloat(boxending);
+
+          let boxgalons = document.getElementById('galons').value;
+          let galons = parseFloat(boxgalons);
+
+          let dif = ending-beginning;
+
+          let total = dif/galons;
+
+           let info = "Your car has runned " + dif + " miles, at a cost of " + total + " Galons per mile";
+          document.getElementById('infodiv').innerHTML = info;
+        }
+    </script>
+</head>
+
+<body>
+    Enter inicial odometer: <input type="text" id="beginningOdometer">
+    <br>
+    Enter final odometer: <input type="text" id="endOfOdometer">
+    <br>
+    How many galons did you use? <input type="text" id="galons">
+    <br>
+    <button type="button" onclick="Convertb()"> Convert </button>
+    <br>
+    <br>
+<div id="infodiv"></div>
+</body>
+</html>

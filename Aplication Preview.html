@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Aplication preview</title>
+
+
+    <script>
+
+        function doPayment() {
+            let principal = parseFloat(document.getElementById("principal").value);
+            let annualRate = parseFloat(document.getElementById("annualRate").value);
+            let years = parseFloat(document.getElementById("years").value);
+            let payPerYear = parseFloat(document.getElementById("payPerYear").value);
+            let outcome = computeFutureValue(principal, annualRate, years, payPerYear)
+            document.getElementById("outputPay").innerHTML = "$" + outcome
+        }
+
+        function computeFutureValue(principal, annualRate, years, periodsPerYear) {
+            let monthlyRate = annualRate / periodsPerYear;
+            let totalPeriods = (periodsPerYear * years);
+            return Math.round(100*principal * Math.pow((1+monthlyRate),totalPeriods))/100;
+        }
+    </script>
+
+
+</head>
+<body>
+
+    Amount Invested (principal)
+    <input type="text" id="principal"></br>
+
+    Annual rate (example: .08)
+    <input type="text" id="annualRate"></br>
+
+    Number of years
+    <input type="text" id="years"></br>
+
+    Periods per year
+    <input type="text" id="payPerYear"></br>
+
+    <button type="button" onclick="doPayment()">Compute future value</button>
+    <div id="outputPay"> </div></br>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Exponents</title>
+    <script>
+        /*
+        input:
+        process:
+        output:        
+        */
+        function expo() {
+            for (let n = 0; n <= 31; n++) {
+                result = Math.pow(2,n);
+                let display = result+ ", "
+               
+                document.getElementById('output').innerHTML += display;  
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <button type="button" onclick="expo()"> Nameofthebutton </button>
+    <div id="output"> </div>
+
+</body>
+
+</html>
